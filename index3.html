@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['AIML', 5],
+                ['CS', 5],
+                ['IT', 5],
+                ['ECE', 5],
+                ['AIDS', 5]
+            ]);
+
+            var options = {
+                title: 'Placements Status'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .card {
+            box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.288);
+            transition: 0.3s;
+            width: 30%;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- sidebar -->
+    <section id="menu">
+        <div class="logo">
+            <img src="./logo.png" alt="logo">
+            <h3><a href="#">Dashboard</a></h3>
+        </div>
+        <div class="items">
+            <li><i class="fa-solid fa-chart-pie"></i><a href="#">Dashboard</a></li>
+            <li><i class="fab fa-uikit"></i><a href="#">Home</a></li>
+            <li><i class="fas fa-hamburger"></i><a href="#">Admissions</a></li>
+            <li><i class="fas fa-th-large"></i><a href="#">Table</a></li>
+            <li><i class="fas fa-edit"></i><a href="#">Forms</a></li>
+            <li><i class="fab fa-cc-visa"></i><a href="#">Cards</a></li>
+            <li><i class="fas fa-chart-line"></i><a href="#">Blank</a></li>
+        </div>
+    </section>
+
+    <!-- navbar -->
+
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+                <div>
+                    <i id="menu-btn" class="fas fa-bars"></i>
+                </div>
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="profile">
+                <i class="far fa-bell"></i>
+                <img src="./logo.png" alt="">
+            </div>
+        </div>
+
+
+        <h3 class="i-name">Dashboard</h3>
+
+        <div class="values">
+            <div class="val-box">
+                <i class="fas fa-users"></i>
+                <div>
+
+                    <span>Students</span>
+                </div>
+            </div>
+            <div class="val-box">
+                <i class="fas fa-book"></i>
+                <div>
+
+                    <span>Library</span>
+                </div>
+            </div>
+            <div class="val-box">
+                <i class="fas fa-newspaper"></i>
+                <div>
+
+                    <span>Notice</span>
+                </div>
+            </div>
+            <div class="val-box">
+                <i class="fas fa-chart-pie"></i>
+                <div>
+
+                    <span>Academic Status</span>
+                </div>
+            </div>
+            <div>
+                <br>
+                <h2>Card</h2>
+
+                <div class="card">
+
+                    <div id="piechart" style="width: 600px; height: 200px;"></div>
+                </div>
+            </div>
+
+    </section>
+
+    <script>
+        $('menu-btn').click(function () {
+            $('menu').toggleClass("active");
+        })
+    </script>
+
+
+
+
+</body>
+
+</html>
