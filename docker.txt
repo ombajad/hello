@@ -1,0 +1,12 @@
+docker version
+mkdir hello-docker
+cd hello-docker
+code .
+Create a js file with console.log(Hello)
+Create docker file
+FROM node:alpine
+COPY . /app
+WORKDIR /app
+CMD node app.js
+docker build -t hello-docker
+docker image ls
